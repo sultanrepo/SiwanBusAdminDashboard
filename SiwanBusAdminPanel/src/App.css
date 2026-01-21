@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 
-*{
+* {
     margin: 0px;
     padding: 0px;
 }
@@ -10,8 +10,36 @@ body {
     background: #ebe9e9;
 }
 
-header{
-    height: 80px;
+header {
+    height: 65px;
     width: 100%;
     background: #fff;
+}
+
+header .row {
+    margin: 0px !important;
+}
+
+header .logoWrapper {
+    text-decoration: none;
+}
+
+header .logoWrapper img {
+    width: 70px;
+}
+
+.brand-name {
+    /* font-family: "Inter", sans-serif; */
+    font-weight: 800;
+    font-size: 18px;
+    letter-spacing: 0.5px;
+    color: rgb(34, 34, 34);
+}
+
+header button.rounded-circle {
+    min-width: 40px !important;
+    width: 40px !important;
+    height: 40px !important;
+    background: #f0f5ff !important;
+    color: rgb(34, 34, 34);
 }
