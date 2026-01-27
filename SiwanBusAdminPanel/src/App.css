@@ -53,3 +53,9 @@ header button.rounded-circle:focus {
     box-shadow: none !important;
 }
 
+.search-box {
+    width: 200px;
+    height: 40px;
+    background: #f0f5ff;
+    border-radius: 15px;
+}
