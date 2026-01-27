@@ -16,9 +16,9 @@ header {
     background: #fff;
 }
 
-header .row {
+/* header .row {
     margin: 0px !important;
-}
+} */
 
 header .logoWrapper {
     text-decoration: none;
@@ -42,4 +42,14 @@ header button.rounded-circle {
     height: 40px !important;
     background: #f0f5ff !important;
     color: rgb(34, 34, 34);
+    font-size: 18px !important
 }
+
+header button.rounded-circle:hover {
+    background: #F6B58F !important;
+}
+
+header button.rounded-circle:focus {
+    box-shadow: none !important;
+}
+
