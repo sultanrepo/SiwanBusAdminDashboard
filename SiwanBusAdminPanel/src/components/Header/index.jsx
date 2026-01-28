@@ -10,6 +10,7 @@ import { CiLight } from "react-icons/ci";
 import { MdMessage } from "react-icons/md";
 import { IoNotifications } from "react-icons/io5";
 import { FaUserAlt } from "react-icons/fa";
+import { MdDarkMode } from "react-icons/md";
 
 
 const Header = () => {
