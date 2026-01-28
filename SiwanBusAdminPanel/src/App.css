@@ -54,8 +54,26 @@ header button.rounded-circle:focus {
 }
 
 .search-box {
-    width: 200px;
+    width: 400px;
     height: 40px;
     background: #f0f5ff;
     border-radius: 15px;
+    padding: 3px 16px;
 }
+
+.search-box input {
+    width: 100%;
+    height: 100%;
+    border: none;
+    background: transparent;
+    padding: 0px 15px;
+    font-size: 14px;
+    outline: none;
+}
+.search-box input::placeholder {
+    color: rgba(0, 0, 0, 0.6);
+}
+/* .search-box svg{
+    font-size: 18px;
+    color: #f0f5ff;
+} */

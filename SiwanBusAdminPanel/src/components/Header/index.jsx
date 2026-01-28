@@ -6,31 +6,47 @@ import SearchBox from "../SearchBox";
 import Button from '@mui/material/Button';
 import { MdMenuOpen } from "react-icons/md";
 import { MdOutlineMenu } from "react-icons/md";
-
+import { CiLight } from "react-icons/ci";
+import { MdMessage } from "react-icons/md";
+import { IoNotifications } from "react-icons/io5";
+import { FaUserAlt } from "react-icons/fa";
 
 
 const Header = () => {
     return (
         <>
             <header className="d-flex align-items-center">
-                <div className="container-fluid w-100">
-                    <div className="row d-flex align-items-center w-100">
-                        {/**Logo Wrapper */}
-                        <div className="col-sm-2 section-1">
+                <div className="container-fluid">
+                    <div className="row align-items-center">
+
+                        {/* Logo */}
+                        <div className="col-auto d-flex align-items-center">
                             <Link to="/dashboard" className="d-flex align-items-center logoWrapper">
                                 <img src={Logo} alt="Logo" />
-                                <span className="ms-1 brand-name">
-                                    SIWANBUS
-                                </span>
+                                <span className="ms-1 brand-name">SIWANBUS</span>
                             </Link>
                         </div>
-                        <div className="col-sm-3 d-flex align-items-center section-2">
-                            <Button className="rounded-circle"><MdMenuOpen /></Button>
+
+                        {/* Search */}
+                        <div className="col d-flex align-items-center">
+                            <Button className="rounded-circle">
+                                <MdMenuOpen />
+                            </Button>
                             <SearchBox />
                         </div>
+
+                        {/* Right Icons */}
+                        <div className="col-auto d-flex align-items-center justify-content-end gap-2">
+                            <Button className="rounded-circle"><CiLight /></Button>
+                            <Button className="rounded-circle"><MdMessage /></Button>
+                            <Button className="rounded-circle"><IoNotifications /></Button>
+                            <Button className="rounded-circle"><FaUserAlt /></Button>
+                        </div>
+
                     </div>
                 </div>
             </header>
+
         </>
     )
 }
