@@ -1,4 +1,5 @@
 import React from "react";
+import { useState } from "react";
 import { Link } from 'react-router-dom';
 import Logo from '../../assets/images/SiwanBus.webp';
 import SearchBox from "../SearchBox";
@@ -29,14 +30,22 @@ import Logout from '@mui/icons-material/Logout';
 
 const Header = () => {
 
-    const [anchorEl, setAnchorEl] = React.useState(null);
+    const [anchorEl, setAnchorEl] = useState(null);
+    const [isOpenNotification, setIsOpenNotification] = useState(false);
     const open = Boolean(anchorEl);
+    const openNotification = Boolean(isOpenNotification);
     const handleClick = (event) => {
         setAnchorEl(event.currentTarget);
     };
     const handleClose = () => {
         setAnchorEl(null);
     };
+    const handleOpenNotificationDropdown = () => {
+        setIsOpenNotification(true);
+    }
+    const handleCloseNotificationDropdown = () => {
+        setIsOpenNotification(false);
+    }
 
     return (
         <>
@@ -63,37 +72,74 @@ const Header = () => {
                         {/* Right Icons */}
                         <div className="col-auto d-flex align-items-center justify-content-end gap-2">
                             <Button className="rounded-circle"><CiLight /></Button>
-                            <Button className="rounded-circle"><MdMessage /></Button>
-                            <Button className="rounded-circle"><IoNotifications /></Button>
-                            {/* <Tooltip title="More Options" arrow>
-                                <Box
-                                    sx={{
-                                        px: 1.5,
-                                        py: 0.5,
-                                        cursor: "pointer",
-                                        borderRadius: "6px",
-                                        display: "flex",
-                                        alignItems: "center",
-                                        "&:hover": {
-                                            backgroundColor: "#F6B58F",
+                            <div className="message-dropdown position-relative">
+                                <Button className="rounded-circle"><MdMessage /></Button>
+                                {/* <Menu
+                                    isOpenNotification={isOpenNotification}
+                                    className="notification-menu"
+                                    id="notification-dropdown"
+                                    open={openNotification}
+                                    onClose={handleCloseNotificationDropdown}
+                                    onClick={handleCloseNotificationDropdown}
+                                    slotProps={{
+                                        paper: {
+                                            elevation: 0,
+                                            sx: {
+                                                overflow: 'visible',
+                                                filter: 'drop-shadow(0px 2px 8px rgba(0,0,0,0.32))',
+                                                mt: 1.5,
+                                                '& .MuiAvatar-root': {
+                                                    width: 32,
+                                                    height: 32,
+                                                    ml: -0.5,
+                                                    mr: 1,
+                                                },
+                                                '&::before': {
+                                                    content: '""',
+                                                    display: 'block',
+                                                    position: 'absolute',
+                                                    top: 0,
+                                                    right: 14,
+                                                    width: 10,
+                                                    height: 10,
+                                                    bgcolor: 'background.paper',
+                                                    transform: 'translateY(-50%) rotate(45deg)',
+                                                    zIndex: 0,
+                                                },
+                                            },
                                         },
                                     }}
+                                    transformOrigin={{ horizontal: 'right', vertical: 'top' }}
+                                    anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
                                 >
-                                    <div className="my-account-wrapper">
-                                        <button className="my-account d-flex align-items-center">
-                                            <span className="user-image">
-                                                <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="User" />
-                                            </span>
-                                            <div className="user-info">
-                                                <h4>Sultan Ashraf</h4>
-                                                <p className="mb-0">@sultan</p>
-                                            </div>
-                                        </button>
-                                    </div>
-                                    <FaSortDown />
-                                </Box>
-                            </Tooltip> */}
-
+                                    <MenuItem onClick={handleClose}>
+                                        <Avatar /> Buses Routes Updates
+                                    </MenuItem>
+                                    <MenuItem onClick={handleClose}>
+                                        <Avatar /> My account
+                                    </MenuItem>
+                                    <Divider />
+                                    <MenuItem onClick={handleClose}>
+                                        <ListItemIcon>
+                                            <PersonAdd fontSize="small" />
+                                        </ListItemIcon>
+                                        Add another account
+                                    </MenuItem>
+                                    <MenuItem onClick={handleClose}>
+                                        <ListItemIcon>
+                                            <Settings fontSize="small" />
+                                        </ListItemIcon>
+                                        Settings
+                                    </MenuItem>
+                                    <MenuItem onClick={handleClose}>
+                                        <ListItemIcon>
+                                            <Logout fontSize="small" />
+                                        </ListItemIcon>
+                                        Logout
+                                    </MenuItem>
+                                </Menu> */}
+                            </div>
+                            <Button className="rounded-circle"><IoNotifications /></Button>
                             <React.Fragment>
                                 <Box sx={{ display: 'flex', alignItems: 'center', textAlign: 'center' }}>
                                     <Tooltip title="Account settings">
@@ -118,17 +164,15 @@ const Header = () => {
                                                     },
                                                 }}
                                             >
-                                                <div className="my-account-wrapper">
-                                                    <button className="my-account d-flex align-items-center">
-                                                        <span className="user-image">
-                                                            <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="User" />
-                                                        </span>
-                                                        <div className="user-info">
-                                                            <h4>Sultan Ashraf</h4>
-                                                            <p className="mb-0">@sultan</p>
-                                                        </div>
-                                                    </button>
-                                                </div>
+                                                <button className="my-account d-flex align-items-center">
+                                                    <span className="user-image">
+                                                        <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="User" />
+                                                    </span>
+                                                    <div className="user-info">
+                                                        <h4>Sultan Ashraf</h4>
+                                                        <p className="mb-0">@sultan</p>
+                                                    </div>
+                                                </button>
                                                 <FaSortDown />
                                             </Box>
                                         </IconButton>
