@@ -71,6 +71,7 @@ header button.rounded-circle:focus {
     font-size: 14px;
     outline: none;
 }
+
 .search-box input::placeholder {
     color: rgba(0, 0, 0, 0.6);
 }
