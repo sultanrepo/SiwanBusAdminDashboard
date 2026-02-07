@@ -46,7 +46,7 @@ header button.rounded-circle {
 }
 
 header button.rounded-circle:hover {
-    background: #F6B58F !important;
+    background: #FA9C6F !important;
 }
 
 header button.rounded-circle:focus {
@@ -131,3 +131,52 @@ header button.rounded-circle:focus {
     margin-bottom: 0;
 }
 
+.sidebar {
+  width: 240px;
+  background: #0f172a; /* dark navy */
+  color: #cbd5e1;
+  height: 100vh;
+  padding: 12px;
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+
+.sidebar.collapsed {
+  width: 72px;
+}
+
+.sidebar-section {
+  margin-bottom: 16px;
+}
+
+.section-title {
+  font-size: 11px;
+  color: #64748b;
+  margin: 8px 12px;
+  letter-spacing: 1px;
+}
+
+.sidebar-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  border-radius: 6px;
+  text-decoration: none;
+  color: inherit;
+  font-size: 14px;
+}
+
+.sidebar-item:hover {
+  background: #1e293b;
+}
+
+.sidebar-item.active {
+  background: #2563eb;
+  color: white;
+}
+
+.icon {
+  font-size: 18px;
+}
