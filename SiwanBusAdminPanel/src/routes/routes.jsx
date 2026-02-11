@@ -4,7 +4,7 @@ import { Route, createRoutesFromElements, createBrowserRouter, RouterProvider } 
 import RootLayout from '../layout/RootLayout';
 import ProtectedRoute from './ProtectedRoute';
 
-/**--------------- Lazy Pages ------------------ */
+/**--------------- Lazy Pages -----------------1- */
 
 const Dashboard = lazy(() => import('../pages/Dashboard'));
 const Buses = lazy(() => import('../pages/Buses'));
