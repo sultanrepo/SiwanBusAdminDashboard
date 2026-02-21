@@ -21,7 +21,7 @@ const Sidebar = ({ role, collapsed }) => {
                   to={item.path}
                   className="sidebar-item"
                 >
-                  {/* <Icon className="icon" /> */}
+                  <Icon className="icon" />
                   {!collapsed && <span>{item.label}</span>}
                 </NavLink>
               );
